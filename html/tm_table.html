@@ -1,0 +1,70 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tomiwa">
+    <meta name="keywords" content="HTML, CSS">
+    <meta name="description" content="TM Media HTML Sample website">
+    <title>HTML Tables Tutorial</title>
+    <link rel="icon" type="image/x-icon" href="TM3.png">
+    <style>
+        table{
+            width:100%;
+            padding:20px;
+        }
+        tr {
+            height:100%;
+        }
+        td {
+            text-align:center;
+            background-color:green;
+        }
+        table, th, td {
+            border: 2px solid white;
+            border-collapse: collapse;
+        }
+        th{
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <caption><b>Company Details</b></caption>
+        <tr>
+            <th>Company</th>
+            <th>Contact</th>
+            <th>Country</th>
+        </tr>
+        <tr>
+            <td>Procter</td>
+            <td>Mary</td>
+            <td>Nigeria</td>
+        </tr>
+        <tr>
+            <td>Gamble</td>
+            <td>Jane</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Pfizer</td>
+            <td>Janet</td>
+            <td>India</td>
+        </tr>
+    </table>
+    <hr>
+    <table>
+        <tr>
+            <th colspan="2">Names</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Tomiwa</td>
+            <td>Aribisala</td>
+            <td>34</td>
+        </tr>
+    </table>
+</body>
+</html>
