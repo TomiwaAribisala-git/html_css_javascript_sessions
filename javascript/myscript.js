@@ -19,9 +19,12 @@ let car3 = car.toLowerCase();
 let movie = "wakanda";
 const key = "value"; 
 console.log(movie.length);
-let cut = car.slice(1); 
+let cut = car.slice(1);
+console.log(cut) 
 let cut1 = car.slice(3,4);
-car.replace("a","b");
+console.log(cut1)
+let replace1 = car.replace("a","b");
+console.log(replace1)
 
 //Block Scope; variables declared in a block cannot be accessed outside the block
 {
@@ -31,7 +34,7 @@ car.replace("a","b");
     const x = 2;
 }
 
-//Function Scope; variables declared in a function becomes local to the function, 
+//Function Scope; variables declared in a function becomes LCOAL to the function, 
 // these variables cannot be accessed outside a function. 
 
 //Global Scope; variables declared outside of a block/function can be accessed anywhere 
@@ -56,14 +59,18 @@ let cars_length = cars.length;
 //Accessing an array elment 
 console.log(cars[0]);
 let car4 = cars[1];
+console.log(car4) 
 //Changing an array element
 cars[2] = "opel"; 
 // Sorting an array element 
 cars.sort(); 
+console.log(cars)
 //Appending array element
 cars.push("toyota");
+console.log(cars)
 //Removing elements from an array, pop removes the last item in an array 
-cars.pop(); 
+let last_car = cars.pop();
+console.log(last_car) 
 //Deleting array element 
 delete cars[0]; 
 
@@ -74,10 +81,10 @@ const names = {
     m_name:"samuel"
 };
 let name1 = names.f_name;
-console.log(name1 + " " + "is my first name.");
+console.log(name1.toUpperCase() + " " + "is my first name.");
 let name2 = names.l_name; 
-console.log(name2 + " " + "is my last name.");
-//Using THIS keyword to access object properties;
+console.log(name2.toUpperCase() + " " + "is my last name.");
+//Using THIS keyword to access object properties; better to use the keyword in a function
 this.f_name;
 this.l_name; 
 //Nested Objects
@@ -113,13 +120,13 @@ let statement = "We are the so called \"Vikings\" in the North";
 console.log(statement);
 
 //JS Date, JS count months from 0 to 11, JS Get Date methods, JS Set Date Methods 
-const d = new Date("2022-10-23");    //ISO Standard 
+const d = new Date("2022-11-23");    //ISO Standard 
 
 //JS Booleans 
 let j = 1; 
 Boolean(j); 
 
-//JS Conditionals, if statement, if-else statements, if--else if, and else statements
+//JS Conditionals, if statement, if-else statements, if---else, if, and else statements
 //Conditionals do not end in semicolon 
 //if - specify a block of code to be executed, if a specified condition is true 
 //else - specify a block of code to be executed, if a specified condition is false
@@ -168,7 +175,7 @@ for (let a = 5, b = 4; a < 10; a++) {
     return a * b; 
 }
 
-//For In Loop; loops through the properties of an object 
+//For In Loop; looping through the properties of an object 
 for (let variable in object) {
 
 }
@@ -185,24 +192,25 @@ for (let x of ibadan_shops) {
 
 const lagos_locations = ['mushin', 'idimu', 'lekki', 'shagamu']; 
 for (const y of lagos_locations) {
-    alert(y); 
+    console.log(y); 
 }
 
 //While Loop; execute a block of code as long as a specified condition is true
 while (condition) {
 
 }
+
 let i = 0
-let code_no = " "
+let code_no = ""
 while (i < 10) {
-    code_no += i + "is my code number";
+    code_no += `${i} is my code number`;
     i++;
 }
 
 //JS Break and Continue statements:
 //Break; jumps out of a loop 
 //Continue; jumps over one iteration in a loop; breaks one iteration in the loop,
-//if a specified condition occursm and continues with the next iteration in the loop.
+//if a specified condition occurs and continues with the next iteration in the loop.
 
 //JS Sets; collection of unique values, similar to tuples in python
 const letters = new Set(['a', 'b', 'c']);
@@ -227,7 +235,7 @@ finally {
 //Declare arrays with const. 
 //End your switches with defaults.
 
-//JS Classes. functions are called methods in classes 
+//JS Classes; functions are called methods in classes 
 class ClassName {
     constructor() {
     }
@@ -247,21 +255,22 @@ class Car {
 }
 let myCar1 = new Car("Ford", 2014);
 let ford = myCar1.present();
-alert(ford);
+console.log(ford);
 
+//Creating a sub(child) class of the parent class 
 class Model extends Car {
     constructor(name, year, model) {
-        super(name, year);
-        this.model = model;
+        super(name, year)
+        this.model = model
     }
     show() {
-        return "This" + this.name + this.model + "is a" + this.year + "model"; 
+        return "This" + this.name + this.model + "is a" + this.year + "model"
     }
 }
 
 let myCar2 = new Model("Ford", "2014", "Mustang");
 let ford_model = myCar2.show();
-alert(ford_model);
+console.log(ford_model);
 
 // JS HTML DOM; The HTML DOM is a standard to get, change add or delete HTML elements
 //Finding HTML Elements 
@@ -278,7 +287,7 @@ document.removeChild(element)
 document.appendChild(element)
 
 // Replacing an HTML Element 
-//document.replaceChild(new, old)
+//document.replaceChild(new,old)
 
 // Changing the content of an HTML element 
 const elem = document.getElementById("")
@@ -294,7 +303,7 @@ elem.style.display = "block"
 
 
 /////Others
-//Adding Event Listener, clicking a button, clicking a box, using onclick in HTML.
+//Adding Event Listener; clicking a button, clicking a box; using onclick in HTML.
 let box = document.getElementById("box")
 box.addEventListener("click", function deli() {
     console.log("The box is clicked")
@@ -330,17 +339,17 @@ console.log(f2)
 function getfirstelement(arr) {
     return arr[0]
 }
-let firstpat = getfirstelement([10,5,20])
+let firstpat = getfirstelement([10, 5, 20])
 console.log(firstpat)
 
 let name = "Tomiwa"
 let greeting = "Hi, my name is"
-let mygreeting = greeting + " " + name
+let mygreeting = `${greeting} ${name}` 
 console.log(mygreeting)
 
 let f_name = "tomiwa"
 let l_name = "aribisala"
-let fullname = f_name + " " + l_name 
+let fullname = `${f_name} ${l_name}` 
 console.log(fullname)
 
 let nam = "Linda"
@@ -374,7 +383,7 @@ if (sum < 21) {
 } else if (sum === 21) {
     console.log("You've won a blackjack game!")
     console.log(isalive)
-} else {``
+} else {
     console.log("You're out of the game!")
     console.log(hasblackjack)
 }
@@ -403,7 +412,7 @@ function player() {
 let fastplayer = player()
 console.log(fastplayer)
 
-let randonnumber = Math.random()
+let randonnumber = Math.random()  //Returns a number between 0 and 1. 
 console.log(randonnumber)
 let floorednumber = Math.floor(3.5)
 console.log(floorednumber)
@@ -413,14 +422,17 @@ let eligibleforcertificate = true
 function cert() {
     console.log("Generating certificate...")
 }
+// &&:and
 if (hasfinishedcourse === true && eligibleforcertificate === true) {
     cert()
 } 
+
 let hasthestone = true
 let hasthevibe = false 
 function has() {
     console.log("Generating hashtag...")
 }
+// ||:or
 if (hasthestone === true  || hasthevibe === true) {
     has() 
 }
@@ -433,6 +445,7 @@ const person = {
 function logData() {
     console.log(person.name + " " + "is" + " " + person.age + " " + "years old and lives in" + " " + person.country)
 }
+//Invoking the function
 logData()
 
 let agerange = 15
@@ -449,12 +462,13 @@ function trainservicefee() {
         console.log("Senior citizen discount applies")
     }
 }
+//Invoking the function
 trainservicefee() 
 
 let largecountries = ["China", "India", "USA", "Pakistan", "Indonesia"]
 function countries() {
     console.log("The five largest countries in the world are:")
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < largecountries.length; i++) {
         console.log("-" + " " + largecountries[i])
     }
 }
@@ -480,6 +494,7 @@ function playinggame() {
         console.log(`The winner is ${opponent} and ${gameplayer} lost the game!`)
     }
 }
+//Invoking the function
 playinggame()
 
 function generateSentence(desc, arr) {
@@ -495,4 +510,5 @@ function generateSentence(desc, arr) {
     let baseString = `The ${arr.length} ${desc} in the world are ${arraysentence}`
     console.log(baseString)
 }
+//Invoking the function
 generateSentence("largest countries", ["China", "Japan", "Korea"])
